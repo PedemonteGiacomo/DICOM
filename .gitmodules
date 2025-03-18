@@ -1,0 +1,3 @@
+[submodule "DICOM"]
+	path = DICOM
+	url = https://github.com/PedemonteGiacomo/DICOM
