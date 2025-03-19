@@ -90,7 +90,7 @@ else:
 if retrieved_files:
     dicom_file = retrieved_files[0]
     ds = pydicom.dcmread(dicom_file)
-
+    # print(ds)
     print("Displaying image from", dicom_file)
     plt.imshow(ds.pixel_array, cmap="gray")
     plt.title("Patient: {}".format(ds.PatientName))

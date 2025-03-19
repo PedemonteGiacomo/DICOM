@@ -86,7 +86,8 @@ def handle_find(event):
 # Known AE titles and their network addresses for C-MOVE
 # (Key: AE Title, Value: (IP, Port))
 KNOWN_AE_DESTINATIONS = {
-    "TESTSCU": ("127.0.0.1", 11113)  # e.g., our test client AE
+    "TESTSCU": ("127.0.0.1", 11113),  # e.g., our test client AE
+    "TESTSCU2": ("127.0.0.1", 11119)  # additional test client AE
 }
 
 # C-MOVE handler (Retrieve)

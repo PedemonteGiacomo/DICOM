@@ -11,10 +11,10 @@ PACS_PORT = 104
 
 # Cartelle
 DICOM_FOLDER = "dicom_images"  # Cartella con i file DICOM da inviare
-SENDED_FOLDER = "sended"       # Cartella in cui spostare i file inviati
+SENT_FOLDER = "sent"       # Cartella in cui spostare i file inviati
 
 # Crea la cartella "sended" se non esiste già
-os.makedirs(SENDED_FOLDER, exist_ok=True)
+os.makedirs(SENT_FOLDER, exist_ok=True)
 
 # Crea l'Application Entity per il sender
 ae = AE(ae_title="SENDER")
@@ -39,8 +39,8 @@ if assoc.is_established:
                 if status and status.Status == 0x0000:
                     print(f"C-STORE successful: {file_path}")
                     # Sposta il file inviato nella cartella "sended"
-                    new_path = os.path.join(SENDED_FOLDER, file)
-                    shutil.move(file_path, new_path)
+                    new_path = os.path.join(SENT_FOLDER, file)
+                    #shutil.copy(file_path, new_path)
                     print(f"Moved {file_path} to {new_path}")
                 else:
                     print(f"C-STORE failed for {file_path} with status 0x{status.Status:04X}")

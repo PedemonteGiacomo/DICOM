@@ -79,14 +79,14 @@ if assoc.is_established:
             print("C-FIND match found:", identifier)
 
     # Step 3c: Retrieve the image back from PACS (C-MOVE)
-    move_ds = Dataset()
-    move_ds.QueryRetrieveLevel = "PATIENT"
-    move_ds.PatientID = "TEST001"
-    responses = assoc.send_c_move(move_ds, move_aet="TESTSCU",  # FIXED: `move_aet` instead of `destination`
-                                  query_model=PatientRootQueryRetrieveInformationModelMove)
-    for (status, identifier) in responses:
-        if status and status.Status in (0xFF00, 0x0000):
-            print(f"C-MOVE response status: 0x{status.Status:04X}")
+    # move_ds = Dataset()
+    # move_ds.QueryRetrieveLevel = "PATIENT"
+    # move_ds.PatientID = "TEST001"
+    # responses = assoc.send_c_move(move_ds, move_aet="TESTSCU",  # FIXED: `move_aet` instead of `destination`
+    #                               query_model=PatientRootQueryRetrieveInformationModelMove)
+    # for (status, identifier) in responses:
+    #     if status and status.Status in (0xFF00, 0x0000):
+    #         print(f"C-MOVE response status: 0x{status.Status:04X}")
 
     # Release association after operations
     assoc.release()

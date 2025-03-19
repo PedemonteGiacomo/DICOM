@@ -1,2 +1,9 @@
 dicom_images/*
 dicom_images
+
+PACS/*.dcm
+
+retrieved_*
+retrieved_
+retrieved_*/*.dcm
+*.dcm
